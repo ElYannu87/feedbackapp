@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css"
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <img src="../static/logo.png" alt="webtl" class="logo">
+        {% if message%}
+            <p class="message">{{ message | safe }}</p>
+        {% endif %}
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <h3>Nom Client</h3>
+                <input 
+                    type="text"
+                    name="client"
+                    placeholder="Nom du client"
+                    />
+            </div>
+            <div class="form-group">
+                <h3>Nom de l'employé</h3>
+                <select name="dealer">
+                    <option value="">Choissisez le nom</option>
+                    <option value="Jean Garril">Jean Garril</option>
+                    <option value="Thomas Algard">Thomas Algard</option>
+                    <option value="Virginie Castel">Virginie Castel</option>
+                    <option value="Louise Tarry">Louise Tarry</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h3>Evaluer votre conseiller</h3>
+                <input type="radio" name="rating" value="1"/> 1
+                <input type="radio" name="rating" value="2"/> 2
+                <input type="radio" name="rating" value="3"/> 3
+                <input type="radio" name="rating" value="1"/> 4
+                <input type="radio" name="rating" value="5"/> 5
+                <input type="radio" name="rating" value="6"/> 6
+                <input type="radio" name="rating" value="7"/> 7
+                <input type="radio" name="rating" value="8"/> 8
+                <input type="radio" name="rating" value="9"/> 9
+                <input type="radio" name="rating" value="10" checked /> 10
+            </div>
+            <div class="from-group">
+                <h3>Décrivez votre expérience</h3>
+                <textarea
+                    name="comments"
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="Ecrire un commentaire"
+                ></textarea>    
+            </div>
+            <input type="submit" value="Envoyer" class="btn" id="submit"/>
+        </form>
+    </div>
+</body>
+</html>
